@@ -122,3 +122,7 @@ docker compose up -d --build app
 docker compose down --rmi local --volumes
 docker compose up --build
 ```
+
+## Ссылка на гугл-таблицу
+
+https://docs.google.com/spreadsheets/d/1fvV4rvShAmS5_5sd5PpwUGSe65GMju9iVHx8Herc5Q8/edit?gid=0#gid=0
