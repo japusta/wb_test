@@ -22,11 +22,12 @@
 
 ## Как запустить
 
-### 1. Клонируйте репозиторий
+### 1. Клонируйте репозиторий и установите зависимости
 
 ```bash
 git clone https://github.com/japusta/wb_test.git
 cd wb_test
+npm install
 ```
 
 ### 2. Добавьте .env файл
