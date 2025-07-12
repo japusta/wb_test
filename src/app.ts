@@ -15,4 +15,4 @@ cron.schedule(env.APP_CRON_SCHEDULE ?? "0 1 * * *", async () => {
   console.log("[Cron] Daily tasks finished");
 });
 
-console.log(`Service started, listening on cron schedule: ${env.APP_CRON_SCHEDULE}`);
+ (`Service started, listening on cron schedule: ${env.APP_CRON_SCHEDULE}`);
