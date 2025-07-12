@@ -127,3 +127,16 @@ docker compose up --build
 ## Ссылка на гугл-таблицу
 
 https://docs.google.com/spreadsheets/d/1fvV4rvShAmS5_5sd5PpwUGSe65GMju9iVHx8Herc5Q8/edit?gid=0#gid=0
+
+### Работоспособность проекта
+
+<img width="548" height="297" alt="image" src="https://github.com/user-attachments/assets/d99b91ad-1235-44c4-bf9b-6fb39c36b67d" />
+
+<img width="758" height="886" alt="image" src="https://github.com/user-attachments/assets/e6091c4d-1726-4f20-a158-6b114353ac0f" />
+
+<img width="1899" height="945" alt="image" src="https://github.com/user-attachments/assets/99c883ca-05ed-44f4-92ae-c4fb6cc5a642" />
+
+
+<img width="664" height="674" alt="image" src="https://github.com/user-attachments/assets/0ab44383-b2a7-431b-893a-a1cbf435c30a" />
+
+<img width="902" height="856" alt="image" src="https://github.com/user-attachments/assets/b30be3ec-f79d-48d8-8194-0dfe135cca72" />
