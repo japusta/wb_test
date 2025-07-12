@@ -1,6 +1,18 @@
-import knex, { migrate, seed } from "#postgres/knex.js";
+import { fetchAndStoreTariffs } from "#services/tariffService.js";
+import { updateSheets } from "#services/sheetsService.js";
+import cron from "node-cron";
+import env from "#config/env/env.js";
 
-await migrate.latest();
-await seed.run();
+// при старте сразу выполним
+await fetchAndStoreTariffs();
+await updateSheets();
 
-console.log("All migrations and seeds have been run");
+// планируем  в 01:00
+cron.schedule(env.APP_CRON_SCHEDULE ?? "0 1 * * *", async () => {
+  console.log("[Cron] Starting daily tasks...");
+  await fetchAndStoreTariffs();
+  await updateSheets();
+  console.log("[Cron] Daily tasks finished");
+});
+
+console.log(`Service started, listening on cron schedule: ${env.APP_CRON_SCHEDULE}`);

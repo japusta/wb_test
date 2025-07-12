@@ -4,7 +4,7 @@
  */
 export async function seed(knex) {
     await knex("spreadsheets")
-        .insert([{ spreadsheet_id: "some_spreadsheet" }])
+        .insert([{ spreadsheet_id: process.env.TEST_SPREADSHEET_ID }])
         .onConflict(["spreadsheet_id"])
         .ignore();
 }

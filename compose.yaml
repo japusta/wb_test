@@ -60,6 +60,14 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       PORT: ${APP_PORT}
       NODE_ENV: production
+      IS_DOCKER: "true" 
+
+
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${GOOGLE_SERVICE_ACCOUNT_JSON}
+      GOOGLE_SHEETS_TARIFFS_RANGE: ${GOOGLE_SHEETS_TARIFFS_RANGE}
+      TARIFFS_API_TOKEN: ${TARIFFS_API_TOKEN}
+      APP_CRON_SCHEDULE: ${APP_CRON_SCHEDULE}
+      TEST_SPREADSHEET_ID: ${TEST_SPREADSHEET_ID}
 
     ports:
       - ${APP_PORT}:${APP_PORT}
@@ -75,6 +83,13 @@ services:
       options:
         max-size: 10m
         max-file: 5
+    command: >
+      sh -c "
+        npm run knex:dev migrate up &&
+        sleep 2 &&
+        npm run knex:dev seed run &&
+        npm run start
+      "
 
-    command: [ "npm", "run", "start" ]
     restart: unless-stopped
+ 
