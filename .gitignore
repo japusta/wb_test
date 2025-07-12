@@ -2,4 +2,5 @@ node_modules
 .local
 .env
 dist
-google-service-account.jsongoogle-service-account.json
+google-service.json
+*.key.json
