@@ -1,22 +1,66 @@
-# Шаблон для выполнения тестового задания
+# Сервис для получения и обновления тарифов Wildberries
 
 ## Описание
-Шаблон подготовлен для того, чтобы попробовать сократить трудоемкость выполнения тестового задания.
 
-В шаблоне настоены контейнеры для `postgres` и приложения на `nodejs`.  
-Для взаимодействия с БД используется `knex.js`.  
-В контейнере `app` используется `build` для приложения на `ts`, но можно использовать и `js`.
+Сервис выполняет две задачи:
 
-Шаблон не является обязательным!\
-Можно использовать как есть или изменять на свой вкус.
+1. Регулярно получает тарифы для коробов с Wildberries и сохраняет их в PostgreSQL.
+2. Обновляет актуальные тарифы в произвольное количество Google-таблиц (по ID), сортируя их по коэффициенту.
 
-Все настройки можно найти в файлах:
-- compose.yaml
-- dockerfile
-- package.json
-- tsconfig.json
-- src/config/env/env.ts
-- src/config/knex/knexfile.ts
+Данные обновляются каждый час. Повторные запросы в течение дня обновляют существующие записи.
+
+## Используемые технологии
+
+- Node.js + TypeScript
+- PostgreSQL
+- Knex.js
+- Google Sheets API
+- Docker + docker-compose
+- Cron
+
+---
+
+## Как запустить
+
+### 1. Клонируйте репозиторий
+
+```bash
+git clone https://github.com/japusta/wb_test.git
+cd wb_test
+```
+
+### 2. Добавьте .env файл
+Создайте файл ```.env``` на основе ```.env.example```.
+
+### 3. Укажите токен Wildberries и путь к Google Service Account JSON:
+
+```
+TARIFFS_API_TOKEN=eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjUwNTIwdjEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc2NTY3MDIyOSwiaWQiOiIwMTk3NmU0Yy1mZTgwLTc1NDAtODkyMi02NGE5ZWUzYTU4MzYiLCJpaWQiOjQ1OTExNjA5LCJvaWQiOjExMzA0NiwicyI6MTA3Mzc0MTgzMiwic2lkIjoiOTMyYzE3NmEtNTA4NS01YzZmLWJjMzMtNGU4NGNkZjU4ZDdlIiwidCI6ZmFsc2UsInVpZCI6NDU5MTE2MDl9.wDoH8FLdZu1049uPCmhx3UHaw28YJB-CylWeD2LgkpRZFIMlOsUlnlVmfmYKy__JWNjfbDkOtdJ69QpSD5EKag
+```
+
+```
+GOOGLE_SERVICE_ACCOUNT_JSON=./google-service-account.json
+```
+
+Также укажите ID хотя бы одной тестовой Google-таблицы в переменной ```TEST_SPREADSHEET_ID``` и диапазон полей ```GOOGLE_SHEETS_TARIFFS_RANGE```.
+
+```
+TEST_SPREADSHEET_ID=1fvV4rvShAmS5_5sd5PpwUGSe65GMju9iVHx8Herc5Q8
+GOOGLE_SHEETS_TARIFFS_RANGE="stocks_coefs!A:G"
+```
+
+### 4. Укажите данные для PostgreSQL
+
+```bash
+POSTGRES_PORT=5432
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=1111
+POSTGRES_HOST=localhost
+APP_PORT=5000
+# запускать каждый день в 1:00 ночи
+APP_CRON_SCHEDULE="0 1 * * *"
+```
 
 ## Команды:
 
@@ -33,8 +77,14 @@ npm run knex:dev migrate latest
 ```bash
 npm run knex:dev seed run
 ```
-Также можно использовать и остальные команды (`migrate make <name>`,`migrate up`, `migrate down` и т.д.)
 
+Команды для разработки
+Миграции и сиды (локально):
+```bash
+npm run knex:dev migrate rollback
+npm run knex:dev migrate latest
+npm run knex:dev seed run
+```
 Для запуска приложения в режиме разработки:
 ```bash
 npm run dev
@@ -50,5 +100,3 @@ docker compose up -d --build app
 docker compose down --rmi local --volumes
 docker compose up --build
 ```
-
-PS: С наилучшими пожеланиями!
