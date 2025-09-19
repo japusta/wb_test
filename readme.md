@@ -67,17 +67,17 @@ APP_CRON_SCHEDULE="0 1 * * *"
 
 ```bash
 {
-  "type": "service_account",
-  "project_id": "vital-future-465713-n1",
-  "private_key_id": "92346b187e5f6ab60907250871cff747c74c80ee",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCxmZGpdNIMezw8\nySSkep5+OucbQQD72eyPeVn7zeggrT3QFUtWQN7a9Ysc3R0mIe1pM+zYcU+tXJYE\ngcGN4rPcaAPq19cKQUZfE5MQt1NPZqrjYlmiszFCHrNwc46kaG6YWlOpYPVk4oJU\nLKK/v4pYdntU0NjpJ62O2Ok2+aSr05STwHwXdEJ2ecNeozuNgnRM1of6Ae8rfPgV\nNXI0WxaSc7A+YzjXyxzXkLRy9L/y1YXoMK8rMHIiQhwyEtFGaHu/fN5coY4QBPXd\nl2JHs+/ZXurDnGQntf3Z/EIxBCBkDnz9wa340LZpY/n34Kf3LlIFunTAaD/4VMAh\nKVpm2QPjAgMBAAECggEAE2eiILp2O42OLAjA4Np8+ByGJSuEaKrg9rQy/sOlZJye\nhQkumBgHwYjT+wK11/VxCUOhJ0Jfivjzcz6c4Acwe8Pprv6HrRkrZTawT5ftmbQF\nYUmHswfn4+o9f5XrX09XINJjExNYUf47Gz4H8keCst5kj1naZBnvvrc4lBx8FOyf\nQQq2nfztwB5/dqRfa9tDw8kaethX8DcOn71tJSt5d9dyd137hMhr0RmaZOVS1r3F\nq6C7BAwGgCGjL0BgRfA9Jo2TDPOhNB43M4v0w/fBy95kSAefokbQf7KC3FHduDiQ\nISi5XhNmtcw7I4wabcgX7B1Q+El5/ZB3jy3f//6WkQKBgQDiSuBeUH2DoxrJIf4G\nDJJQcFXGElDSjAul+PRvFWn3/viYsL29gHA4C+G1W9Pc668xmnoeGohoB5x4GC90\nD7/RZGUmVU1XTgWRH63/spLoEvgfVywfotHUsZIF2aRQmsrSy+t14Mhs45Z2XqCg\n3frL30CZcYXG5Z4HLOzfYfrwdQKBgQDI6kGJpfJAChvN+/dKa/CPDXNacaMLrkeI\noz9WBIkb+pPSEnsGmWalcDrTAOzkBtFrEAREGfZKWs2QPVIvWIhIrhSKDtwoLjNT\n/r8FZQmP+a91dqSSPrtmoYzq/YSuamUvxRN0FD030aHphTWEkHKNLIJl6p+PrZgO\nRKwNdY6X9wKBgQC9YKhQhc/koFVESdxKt66i/r/pmV5mNalx5ty5MhSS5KCrOA4y\nTxCa9uaXXhf55IujWYIlO1M4rFX381WTLbL7y6cS44RsMfFauEZnnMxwx586qztT\n5nDwLQLlPnTSuBhRPTL6XXmeFwDOYvbOabb/cwCe6XBpObR8kM5TS640GQKBgQC4\nWrLuQfXqKxxeQtAjWq3uJXJuUA1Cv5Tl3J1WKW1B3ghbXxfB82pLbZKcYKH9jgAE\n1DqF3qiui2lJ6+qIhRzwS8OO9pmuyM3SSdMveQlwMbR8/PN/Oc6tGpl6Wkuv2vKk\nBZqXDacqm9GMu+1iiUSDI483QzVMGgaHOR4Cb5b6+wKBgQCUDNIxfF2yINk0M9op\ngzo18WgUk4dfIM/TrEPr1qHM6jmemyDmvd0hQvvi4unJsz+GlHMYYjk+FrNFDnQJ\nF0EMk8HvxHjlA562btG0KjnktID0jmwwVqUDaGZKWW/pxpdGmWwMakrAZu8xljou\n3G8odoKJt55CUhJKiI8S4pgKDA==\n-----END PRIVATE KEY-----\n",
-  "client_email": "wb-test@vital-future-465713-n1.iam.gserviceaccount.com",
-  "client_id": "102508097358513836227",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wb-test%40vital-future-465713-n1.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "type": ,
+  "project_id": ,
+  "private_key_id": ,
+  "private_key": ,
+  "client_email": ,
+  "client_id": ,
+  "auth_uri": ,
+  "token_uri": ,
+  "auth_provider_x509_cert_url": ,
+  "client_x509_cert_url": ,
+  "universe_domain": 
 }
 
 ```
